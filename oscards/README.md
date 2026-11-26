@@ -34,7 +34,7 @@ npm run dev -- --open
 Start the app in one terminal:
 
 ```sh
-npm run dev -- --host 127.0.0.1
+npm run dev
 ```
 
 Then run the Cypress tests in another terminal:
