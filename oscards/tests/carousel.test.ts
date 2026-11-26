@@ -1,4 +1,4 @@
-// Testaa karusellissa liikkumista nuolilla ja viereistä korttia valitsemalla.
+// Testaa karusellissa liikkumista nuolilla ja viereistä korttia valitsemalla
 import { fireEvent, render, screen } from '@testing-library/svelte';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { getCarouselStore } from '../src/lib/carouselStore';

@@ -1,4 +1,4 @@
-// Testaa julisteen hakua, näyttämistä ja puuttuvan julisteen käsittelyä.
+// Testaa julisteen hakua, näyttämistä ja puuttuvan julisteen käsittelyä
 import { render, screen, waitFor } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
 import Poster from '../src/lib/Poster.svelte';
@@ -10,9 +10,7 @@ describe('Poster', () => {
 
 		render(Poster, { props: { elokuvaTunnus: 'tt0407887' } });
 
-		expect(fetchMock).toHaveBeenCalledWith(
-			'https://imdb.iamidiotareyoutoo.com/search?q=tt0407887'
-		);
+		expect(fetchMock).toHaveBeenCalledWith('https://imdb.iamidiotareyoutoo.com/search?q=tt0407887');
 		await waitFor(() => {
 			expect(screen.getByRole('img', { name: 'Poster' })).toHaveAttribute(
 				'src',

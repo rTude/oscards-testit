@@ -1,4 +1,4 @@
-// Testaa navigaatiokomponenttien linkkien kohteita.
+// Testaa navigaatiokomponenttien linkkien kohteita
 import { render, screen } from '@testing-library/svelte';
 import { describe, expect, it, vi } from 'vitest';
 import CategoryButton from '../src/routes/categoryButton.svelte';

@@ -1,4 +1,4 @@
-// Testaa elokuvakortin tietoja, suosikkeja ja puuttuvan julisteen käsittelyä.
+// Testaa elokuvakortin tietoja, suosikkeja ja puuttuvan julisteen käsittelyä
 import { fireEvent, render, screen, waitFor } from '@testing-library/svelte';
 import { get } from 'svelte/store';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';

@@ -1,4 +1,4 @@
-// Testaa henkilökortin tietoja ja valintakäsittelijän kutsumista.
+// Testaa henkilökortin tietoja ja valintakäsittelijän kutsumista
 import { fireEvent, render, screen } from '@testing-library/svelte';
 import { describe, expect, it, vi } from 'vitest';
 import PersonCard from '../src/lib/PersonCard.svelte';

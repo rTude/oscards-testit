@@ -1,4 +1,4 @@
-// Testaa karusellistorejen avainkohtaista uudelleenkäyttöä ja erillisyyttä.
+// Testaa karusellistorejen avainkohtaista uudelleenkäyttöä ja erillisyyttä
 import { get } from 'svelte/store';
 import { describe, expect, it } from 'vitest';
 import { getCarouselStore } from '../src/lib/carouselStore';
