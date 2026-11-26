@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+//E2E-testit
+
 describe('Oscards', () => {
 	beforeEach(() => {
 		cy.intercept('https://imdb.iamidiotareyoutoo.com/**', {

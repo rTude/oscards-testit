@@ -41,6 +41,20 @@ Launch a local server
 npm run dev
 ```
 
+## E2E tests
+
+Start the app in one terminal:
+
+```sh
+npm run dev
+```
+
+Then run the Cypress tests in another terminal:
+
+```sh
+npm run test:e2e
+```
+
 ### Tekoäly
 
 Yksikkötestit ovat tehty copilot:in yhteistyö voimin
