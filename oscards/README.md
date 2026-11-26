@@ -29,20 +29,6 @@ npm run dev
 npm run dev -- --open
 ```
 
-## E2E tests
-
-Start the app in one terminal:
-
-```sh
-npm run dev
-```
-
-Then run the Cypress tests in another terminal:
-
-```sh
-npm run test:e2e
-```
-
 ## Building
 
 To create a production version of your app:
