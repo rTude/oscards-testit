@@ -52,6 +52,7 @@
 </script>
 
 <div
+	data-cy={`carousel-mobile-${id}`}
 	class:hidden={visible}
 	class="snap-x snap-mandatory overflow-x-auto md:hidden"
 	in:fly={{ y: -400 }}
@@ -65,18 +66,25 @@
 	</div>
 </div>
 
-<div class:piilotettu={visible} class="hidden w-full justify-center md:flex" in:fly={{ y: -400 }}>
+<div
+	data-cy={`carousel-desktop-${id}`}
+	class:piilotettu={visible}
+	class="hidden w-full justify-center md:flex"
+	in:fly={{ y: -400 }}
+>
 	<div class="relative flex w-full max-w-200 justify-center">
 		{#each cards as setti, i (setti)}
 			{@const diff = getDiff(i)}
 			{#if diff === 0}
 				<button
+					data-cy={`carousel-previous-${id}`}
 					class="material-symbols-outlined absolute top-60 left-1/4 z-900 scale-400 text-5xl text-yellow-400 drop-shadow-[0_3px_1px_rgba(0,0,0,1)] transition-transform hover:scale-450 hover:cursor-pointer"
 					onclick={() => prev()}
 				>
 					arrow_back_ios
 				</button>,
 				<button
+					data-cy={`carousel-next-${id}`}
 					class="material-symbols-outlined absolute top-60 right-7/32 z-900 scale-400 text-5xl text-yellow-400 drop-shadow-[0_3px_1px_rgba(0,0,0,1)] transition-transform hover:scale-450 hover:cursor-pointer"
 					onclick={() => next()}
 				>

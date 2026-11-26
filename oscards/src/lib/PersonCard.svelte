@@ -17,6 +17,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
+	data-cy="person-card"
 	class="relative mx-auto h-135 w-80 max-w-sm overflow-hidden rounded-lg border-2 border-yellow-400 bg-zinc-900 object-cover pb-10 shadow-[0_0_35px_rgba(0,0,0,0.55)]"
 	{onclick}
 >

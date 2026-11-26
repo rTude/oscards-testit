@@ -7,12 +7,16 @@
 	import { onMount } from 'svelte';
 	import type { Movie } from '$lib/tyypit';
 	import { fly } from 'svelte/transition';
+	import { modalVisible } from '$lib/modalStore';
+	import { favoriteMessage } from '$lib/favoriteMessageStore';
+	import AddedToFavorites from '$lib/addedToFavorites.svelte';
 
 	let showCard = $state(false);
 	let selectedMovie = $state<string | null>(null);
 	let movies: Movie[] = $state([]);
 
 	onMount(async () => {
+		modalVisible.set(false);
 		const response = await fetch('/data/movies.json');
 		movies = await response.json();
 	});
@@ -26,6 +30,10 @@
 	}
 </script>
 
+{#if $modalVisible}
+	<AddedToFavorites />
+{/if}
+
 <Header otsikko="favorites" />
 
 {#if favorite.fav.length === 0}
@@ -38,7 +46,7 @@
 
 <Carousel kortit={favorite.fav} id="favorites">
 	{#snippet children(setti, diff)}
-		<div class="flex flex-col items-center" out:fly={{ y: 1000 }}>
+		<div data-cy="favorite-card" class="flex flex-col items-center" out:fly={{ y: 1000 }}>
 			<div class={`transition-transform ${diff === 0 ? 'hover:scale-105' : 'hover:scale'}`}>
 				<button
 					onclick={diff === 0
@@ -52,8 +60,13 @@
 				</button>
 			</div>
 			<button
+				data-cy="remove-favorite"
 				class="m-1 mt-4 self-center rounded-2xl border-2 border-yellow-400 bg-zinc-900/55 px-4 py-2 font-judson text-xl font-bold text-yellow-400 shadow-2xl transition-transform hover:scale-105"
-				onclick={() => (favorite.unfav = setti)}>Remove</button
+				onclick={() => {
+					favorite.unfav = setti;
+					favoriteMessage.set('Removed from favorites');
+					modalVisible.set(true);
+				}}>Remove</button
 			>
 		</div>
 	{/snippet}
@@ -63,6 +76,7 @@
 	<Modal onclick={() => (showCard = false)}>
 		{#snippet header()}
 			<button
+				data-cy="close-movie-details"
 				class="material-symbols-outlined ml-[4%] scale-200 text-5xl text-yellow-400 hover:cursor-pointer"
 				onclick={() => (showCard = false)}
 			>
