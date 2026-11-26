@@ -1,3 +1,5 @@
+# Yksikkötestit suoritetaan sekä pull requesteissa että jokaisessa pushissa,
+# mukaan lukien merge-commitit testihaaraan.
 name: Yksikkötestit
 
 on:

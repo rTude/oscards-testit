@@ -28,10 +28,10 @@ jobs:
         run: npm ci
 
       - name: Käynnistä sovellus ja aja E2E-testit
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7.4.4
         with:
           working-directory: oscards
           install: false
-          start: npm run dev -- --host 127.0.0.1
+          start: npm run dev
           wait-on: http://127.0.0.1:5173
           command: npm run test:e2e
