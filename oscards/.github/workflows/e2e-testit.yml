@@ -1,0 +1,37 @@
+# E2E-testit suoritetaan sekä pull requesteissa että jokaisessa pushissa,
+# mukaan lukien merge-commitit testihaaraan.
+name: E2E-testit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  cypress:
+    name: Cypress E2E
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hae lähdekoodi
+        uses: actions/checkout@v4
+
+      - name: Aseta Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: oscards/package-lock.json
+
+      - name: Asenna riippuvuudet
+        working-directory: oscards
+        run: npm ci
+
+      - name: Käynnistä sovellus ja aja E2E-testit
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: oscards
+          install: false
+          start: npm run dev
+          wait-on: http://localhost:5173
+          command: npm run test:e2e
