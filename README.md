@@ -1,6 +1,4 @@
-
 # Oscards
-
 
 ## Description
 
@@ -24,14 +22,16 @@ Uusia, itselle mielenkiintoiselta vaikuttavia elokuvia on myös mahdollista lis�
 ### Installing
 
 Clone repository:
+
 ```
   git clone https://github.com/jamktiko/oscards.git
 ```
+
 Install dependencies:
+
 ```
   npm install
 ```
-  
 
 ### Executing program
 
@@ -41,6 +41,11 @@ Launch a local server
 npm run dev
 ```
 
+### Tekoäly
+
+Yksikkötestit ovat tehty copilot:in yhteistyö voimin
+
+Launch a local server
 
 ## Authors
 
