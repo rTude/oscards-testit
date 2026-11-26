@@ -45,7 +45,7 @@ npm run dev
 
 Yksikkötestit ovat tehty copilot:in yhteistyö voimin
 
-Launch a local server
+E2E-testit ovat tehty copilot:in yhteistyö voimin
 
 ## Authors
 
